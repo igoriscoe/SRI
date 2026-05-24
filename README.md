@@ -1,6 +1,6 @@
 ⚙️ Detalhamento Técnico do Pipeline (Notebooks)
 
-🧩 1. 1_1_Segmentacao_Limpeza
+🧩 **1. 1_1_Segmentacao_Limpeza**
 Objetivo: Processar o texto bruto, mitigando ruídos estruturais e segmentando o corpus em unidades sentenciais padronizadas.
 
 Dados de Entrada: data/documentos.csv contendo os campos ["id", "documento"].
@@ -23,7 +23,7 @@ Segmentação do texto limpo em sentenças estruturadas.
 
 Artefato de Saída: data/dataset.zip (contendo o arquivo dataset.csv com o esquema ["id", "sentencas", "documento"]).
 
-🏷️ 2. 1_2_GerarPOS
+🏷️ **2. 1_2_GerarPOS**
 Objetivo: Extrair a estrutura gramatical e realizar a etiquetagem morfossintática (Part-of-Speech Tagging) de cada token.
 
 Dados de Entrada: data/dataset.zip.
@@ -42,7 +42,7 @@ Extração isolada de estruturas verbais e predicados.
 
 Artefato de Saída: data/datasetpos.zip (contendo datasetpos.csv no formato ["id", "pos_documento"]).
 
-🏢 3. 1_3_NER_SPacY
+🏢 **3. 1_3_NER_SPacY**
 Objetivo: Detectar, extrair e categorizar núcleos de informação semântica de alta relevância (Entidades Nomeadas).
 
 Dados de Entrada: data/dataset.zip e data/datasetpos.zip.
@@ -65,7 +65,7 @@ Extração precisa dos índices de início e fim (spans) de cada entidade detect
 
 Artefato de Saída: data/datasetner.zip (contendo datasetnes.csv no formato ["id", "ner_documento"]).
 
-📊 4. 2_1_AnaliseDados
+📊 **4. 2_1_AnaliseDados**
 Objetivo: Agregar o conhecimento gerado em todas as etapas, computar distribuições estatísticas e prover diagnósticos analíticos sobre o corpus.
 
 Dados de Entrada: Integração analítica dos arquivos dataset.zip, datasetpos.zip e datasetner.zip.
@@ -83,5 +83,3 @@ Geração de gráficos estatísticos avançados (distribuições de frequência,
 Avaliação de métricas de densidade textual, como proporção de substantivos por verbos e extensões absolutas de sentenças.
 
 Artefato de Saída: Exibição de matrizes dinâmicas de dados e plots estatísticos embutidos para validação do pipeline de SRI.
-
-Documentação compilada para o desenvolvedor igoriscoe (igoriscoe@gmail.com) na disciplina de Tópicos Especiais.
